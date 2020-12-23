@@ -1,0 +1,50 @@
+스프링
+
+
+12/22
+
+Server program + let : 작은서버 프로그램
+ applet : application + let : 작은 응용프로그램
+
+J2EE의 표준 스펙중 하나 
+
+Web Application Server : WAS(jboss, IBM웹스피어)
+== Web Container == Servlet Container (tomcat)
+
+MIME 
+전자우편을 위한 인터넷 표준 포맷
+ 		간이전자 우편 전송 프로토콜
+		SMTP에서는 기본적으로 7비트 기준 아스키코드만 정송가능 
+		http에서도 차용 영어가 아닌 모든 문자는 인코딩이 필요 == MIME
+	
+	Content-Type (MIME-type)
+		어떤 형식의 자료를 송/수신 하는지 표시
+		html/text,  application/json, image/png
+
+Maver Project
+	Group id : 회사의 도메인 역순으로 기술 해당 프로젝트를 진행하는 회사에 대한 정보
+		naver.com => com.naver
+		ddit.or.kr => kr.or.ddit
+	
+Artifavt id : Group id에 해당하는 회사에서 진행하는 프로젝트명
+		google : GMAIL, GOOGLE DRIVE 
+	
+	version : 프로젝트의 버전 
+ 		대 중 소 / 3.5.2 
+
+JAR 
+	JAVA Archive : 클래스들을 묶어 놓은 파일, 압축파일 
+	class html jsp image css javascript
+
+WAR : Web Archive : 웹 프로그램을 묶어 놓은 파일
+tomcat의 webapps 폴더에 war 파일을 복사 해놓고 톰캣을 기동하면
+war파일을 톰캣이 자동으로 압축을 해제하여 웹 어플리케이션이 
+서비스 되도록 한다,
+	
+pom : Project object Model - 프로젝트에 대한 설정 정보 
+      해당 프로젝트를 만든 회사
+      프로젝트 이름
+      프로젝트 버전
+      프로젝트에서 필요로하는 의존성(dependency) - 라이브러리(ojdbc6.jar)
+pom.xml
+	
