@@ -31,9 +31,9 @@ public class BasicServlet extends HttpServlet {
 		// 만약에 로그 레벨을 debug보다 높은 레벨로 설정 할 경우
 		// 로그를 생성하지는 않지만 메서드 인자인 문자열 + 문자열 ==> 문자열 결합 연산은 발생한다
 		
-//		if(설정로그레벨이 >= debug) {
-//		logger.debug("basicServlet.doGet() userid paramter : " + req.getParameter("userid"));
-//		}
+		//		if(설정로그레벨이 >= debug) {
+		//		logger.debug("basicServlet.doGet() userid paramter : " + req.getParameter("userid"));
+		//		}
 		
 		logger.debug("basicServlet.doGet() userid paramter : {}{}", req.getParameter("userid"), req.getParameter("password"));
 		
