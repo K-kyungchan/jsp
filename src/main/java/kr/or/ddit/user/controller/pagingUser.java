@@ -1,7 +1,6 @@
 package kr.or.ddit.user.controller;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -48,7 +47,7 @@ public class pagingUser extends HttpServlet {
 		
 		request.setAttribute("userlist", userList);
 		request.setAttribute("pagination", pagination);
-		
+		request.setAttribute("PageVo", page2);
 		request.getRequestDispatcher("pageUser/pageUser.jsp").forward(request, response);
 	}
 }
