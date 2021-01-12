@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- select 된 컬럼과 resultType에 기술된 클래스의 필드 이름이 동일하면 자동으로 값을 넣어준다 resultType 
+	: 한행의 정보를 저장할 수있는 클래스 타입을 명시 -->
+<mapper namespace="emps">
+	<select id="selectAllUser" resultType="empVo">
+		select * from emp
+	</select>
+
+
+</mapper>
+

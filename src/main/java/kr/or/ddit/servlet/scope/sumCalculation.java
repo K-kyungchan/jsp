@@ -34,8 +34,11 @@ public class sumCalculation extends HttpServlet {
 		for (int i = num11; i <= num22; i++) {
 			sum = sum + i;
 		}
+
+		logger.debug("{}", sum);
+
 		session.setAttribute("sumResult", sum);
-		
+
 		req.getRequestDispatcher(req.getContextPath() + "/sumResult.jsp").forward(req, resp);
 	}
 
