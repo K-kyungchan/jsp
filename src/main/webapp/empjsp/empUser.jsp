@@ -17,8 +17,8 @@
 
 <title>Jsp</title>
 <%@ include file="/common/common_lib.jsp"%>
-<link href="<%=request.getContextPath()%>/css/blog.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/css/dashboard.css"
+<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/dashboard.css"
 	rel="stylesheet">
 <script src="/js/jquery/jquery-1.12.4.js"></script>
 <link href="bootstrap.css" rel="stylesheet">

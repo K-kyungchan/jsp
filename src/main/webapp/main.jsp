@@ -11,8 +11,8 @@
 <meta name="author" content="">
 <link rel="icon" href="../../favicon.ico">
 <%@ include file="/common/common_lib.jsp"%>
-<link href="<%=request.getContextPath()%>/css/blog.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/css/dashboard.css"
+<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/dashboard.css"
 	rel="stylesheet">
 
 <title>Main</title>

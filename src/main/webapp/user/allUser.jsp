@@ -1,6 +1,7 @@
 <%@page import="kr.or.ddit.user.model.UserVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <%@page import="kr.or.ddit.emp.vo.EmpVo"%>
@@ -18,8 +19,9 @@
 
 <title>Jsp</title>
 <%@ include file="/common/common_lib.jsp"%>
-<link href="<%=request.getContextPath()%>/css/blog.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/css/dashboard.css"
+<link href="${pageContext.request.contextPath }/css/blog.css"
+	rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/dashboard.css"
 	rel="stylesheet">
 <script src="/js/jquery/jquery-1.12.4.js"></script>
 <link href="bootstrap.css" rel="stylesheet">
@@ -73,26 +75,22 @@
 					<div class="col-sm-8 blog-main">
 						<h2 class="sub-header">직원</h2>
 						<div class="table-responsive">
-							<%
-							List<UserVo> userlist = (List<UserVo>) request.getAttribute("userlist");
-							%>
+							 
 							<table class="table table-striped">
 								<tr>
 									<th>유저아이디</th>
 									<th>유저이름</th>
 									<th>별명</th>
 								</tr>
-								<%
-								for (int i = 0; i < userlist.size(); i++) {
-								%>
-								<tr>
-									<td><%=userlist.get(i).getUserid()%></td>
-									<td><%=userlist.get(i).getUsernm()%></td>
-									<td><%=userlist.get(i).getAlias()%></td>
-								</tr>
-								<%
-								}
-								%>
+
+								<c:forEach items="${userlist}" var="user">
+									<tr>
+										<td>${user.userid}</td>
+										<td>${user.usernm}</td>
+										<td>${user.alias}</td>
+									</tr>
+								</c:forEach>
+							
 							</table>
 						</div>
 
