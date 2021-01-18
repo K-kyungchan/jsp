@@ -27,6 +27,8 @@ public class AllUser extends HttpServlet {
 		 
 		request.setAttribute("userlist", userlist);
 		request.getRequestDispatcher("user/allUser.jsp").forward(request, response);
+		
+		
 
 	}
 

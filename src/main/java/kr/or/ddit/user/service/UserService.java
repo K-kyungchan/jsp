@@ -29,14 +29,29 @@ public class UserService implements UserServiceI {
 	@Override
 	public Map<String, Object> selectPagingUser(PageVo page) {
 		Map<String, Object> map = new HashMap<String, Object>();
-		
+
 		List<UserVo> userList = userDao.selectPagingUser(page);
 		int userCnt = userDao.selectAlluserCnt();
-		
+
 		map.put("userList", userList);
 		map.put("userCnt", userCnt);
-		
+
 		return map;
+	}
+
+	@Override
+	public int modifyUser(UserVo userVo) {
+		return userDao.modifyUser(userVo);
+	}
+
+	@Override
+	public int registUser(UserVo userVo) {
+		return userDao.registUser(userVo);
+	}
+
+	@Override
+	public int deleteUser(String userid) {
+		return userDao.deleteUser(userid);
 	}
 
 }

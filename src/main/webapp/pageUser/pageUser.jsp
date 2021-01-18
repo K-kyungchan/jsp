@@ -110,14 +110,13 @@
 							</table>
 						</div>
 
-						<a class="btn btn-default pull-right">사용자 등록</a>
+						<a class="btn btn-default pull-right" href="<%=request.getContextPath()%>user/registUser.jsp">사용자 등록</a>
 						<div class="text-center">
 							<%
 							PageVo pageVo = (PageVo) request.getAttribute("PageVo");
 							int pagination = (int) request.getAttribute("pagination");
 							%>
 							<ul class="pagination">
-
 								<%-- pagination 값이 4이므로 1부터 4까지 4번 반복된다
 								     전체 사용자수 : 16명
 								     페이지 사이즈 : 5

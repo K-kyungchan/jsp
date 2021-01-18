@@ -6,6 +6,7 @@
 		resultType : 한행의 정보를 저장할 수있는 클래스 타입을 명시
  -->
 <mapper namespace="users">
+
 	<select id="selectAllUser" resultType="userVo">
 		select * from users
 	</select>
@@ -31,8 +32,25 @@
 		where rn between (#{page}-1)*#{pageSize}+1 and #{page}*#{pageSize}
 	</select>
 	
-
+	<update id="modifyUser" parameterType="userVo">
+		update users set usernm=#{usernm},
+	                   	 pass=#{pass},
+	                	 alias=#{alias},
+	               		 addr1=#{addr1},
+	                	 addr2=#{addr2},
+	                	 zipcode=#{zipcode}
+		where userid = #{userid}
+	</update>
 	
+	<insert id="registUser" parameterType="userVo">
+		insert into users (userid, usernm, pass, reg_dt, alias, addr1, addr2, zipcode) 
+		values (#{userid}, #{usernm}, #{pass}, #{reg_dt}, #{alias}, #{addr1}, #{addr2}, #{zipcode})
+	</insert>
+	
+	<!-- 사용자 삭제 -->
+	<delete id="deleteUser" parameterType="string">
+		delete users
+		where userid = #{value}
+	</delete>
 	
 </mapper>
-

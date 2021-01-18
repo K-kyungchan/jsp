@@ -58,12 +58,60 @@ public class UserDao implements UserDaoI {
 	@Override
 	public int selectAlluserCnt() {
 		SqlSession sqlSession = MybatisUtill.getSqlSession();
-		
+
 		int userCnt = sqlSession.selectOne("users.selectAllUserCnt");
-		
+
 		sqlSession.close();
-		
+
 		return userCnt;
 	}
 
+	@Override
+	public int modifyUser(UserVo userVo) {
+		SqlSession sqlSession = MybatisUtill.getSqlSession();
+
+		int updateCnt = sqlSession.update("users.modifyUser", userVo);
+
+		if (updateCnt == 1) {
+			sqlSession.commit();
+		} else {
+			sqlSession.rollback();
+		}
+
+		sqlSession.close();
+
+		return updateCnt;
+	}
+
+	@Override
+	public int registUser(UserVo userVo) {
+		SqlSession sqlSession = MybatisUtill.getSqlSession();
+
+		int registCnt = sqlSession.insert("users.registUser", userVo);
+
+		if (registCnt == 1) {
+			sqlSession.commit();
+		} else {
+			sqlSession.rollback();
+		}
+		sqlSession.close();
+		return registCnt;
+	}
+
+	@Override
+	public int deleteUser(String userid) {
+		SqlSession sqlSession = MybatisUtill.getSqlSession();
+
+		int deleteUser = sqlSession.delete("users.deleteUser", userid);
+
+		if (deleteUser == 1) {
+			sqlSession.commit();
+		} else {
+			sqlSession.rollback();
+		}
+		sqlSession.close();
+		return deleteUser;
+	}
+	
+	
 }

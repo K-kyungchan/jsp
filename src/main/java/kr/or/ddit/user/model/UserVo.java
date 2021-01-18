@@ -19,14 +19,24 @@ public class UserVo {
 	public UserVo() {
 	};
 
+	public UserVo(String userid, String usernm, String pass, Date reg_dt, String alias, String addr1, String addr2,
+			String zipcode) {
+		this.userid = userid;
+		this.usernm = usernm;
+		this.pass = pass;
+		this.reg_dt = reg_dt;
+		this.alias = alias;
+		this.addr1 = addr1;
+		this.addr2 = addr2;
+		this.zipcode = zipcode;
+
+	}
+
 	public String getUserid() {
 		return userid;
 	}
 
 	public String getreg_dt_fm() {
-		// Hiredate 필드가 null 이면 "" 문자열 반환
-		// Hiredate 필드가 null이 아니면 simpleDateFormat을
-		// 생성하여 yyyy.mm,dd 포맷의 문자열로 변환하여 리턴
 		if (this.reg_dt != null) {
 			return "";
 		} else {
@@ -34,8 +44,8 @@ public class UserVo {
 			return sdf.format(this.reg_dt);
 		}
 
-	}	
-		
+	}
+
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}

@@ -12,4 +12,10 @@ public interface UserServiceI {
 	UserVo selectUser(String userid);
 
 	Map<String, Object> selectPagingUser(PageVo page);
+	
+	int modifyUser(UserVo userVo);
+	
+	int registUser(UserVo userVo);
+	
+	int deleteUser(String userid);
 }
