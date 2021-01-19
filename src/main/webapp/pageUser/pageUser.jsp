@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt"  uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <%@page import="kr.or.ddit.emp.vo.EmpVo"%>
 <%@page import="java.util.List"%>
@@ -93,6 +94,7 @@
 									<th>유저아이디</th>
 									<th>유저이름</th>
 									<th>별명</th>
+									<th>등록일시</th>
 								</tr>
 								 
 								<c:forEach items="${userlist}" var="user">
@@ -100,6 +102,7 @@
 										<td>${user.userid}</td>
 										<td>${user.usernm}</td>
 										<td>${user.alias}</td>
+										<td><fmt:formatDate value="${user.reg_dt }" type="date" dateStyle="medium" /></td>
 									</tr>
 								</c:forEach>
 							 

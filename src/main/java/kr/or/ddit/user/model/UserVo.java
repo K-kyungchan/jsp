@@ -36,15 +36,15 @@ public class UserVo {
 		return userid;
 	}
 
-	public String getreg_dt_fm() {
-		if (this.reg_dt != null) {
-			return "";
-		} else {
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
-			return sdf.format(this.reg_dt);
-		}
-
-	}
+//	public String getreg_dt_fm() {
+//		if (this.reg_dt != null) {
+//			return "";
+//		} else {
+//			SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
+//			return sdf.format(this.reg_dt);
+//		}
+//
+//	}
 
 	public void setUserid(String userid) {
 		this.userid = userid;

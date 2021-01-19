@@ -4,6 +4,8 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -127,7 +129,7 @@
 					<div class="form-group">
 						<label for="pass" class="col-sm-2 control-label">등록일시</label>
 						<div class="col-sm-10">
-							<label class="control-label"><%=vo.getreg_dt_fm()%></label>
+							<label class="control-label"><fmt:formatDate value="${reg_dt }" type="date" dateStyle="medium"/></label>
 						</div>
 					</div>
 

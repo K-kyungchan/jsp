@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <%@page import="kr.or.ddit.emp.vo.EmpVo"%>
@@ -17,7 +19,8 @@
 
 <title>Jsp</title>
 <%@ include file="/common/common_lib.jsp"%>
-<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/blog.css"
+	rel="stylesheet">
 <link href="${pageContext.request.contextPath }/css/dashboard.css"
 	rel="stylesheet">
 <script src="/js/jquery/jquery-1.12.4.js"></script>
@@ -81,23 +84,14 @@
 									<th>담당직무</th>
 									<th>입사일시</th>
 								</tr>
-								<%
-								List<EmpVo> userlist = (List<EmpVo>) request.getAttribute("userlist");
-								%>
-								<%
-								for (int i = 0; i < userlist.size(); i++) {
-									EmpVo vo = userlist.get(i);
-									 
-								%>
-								<tr>
-									<td><%=vo.getEmpno()%></td>
-									<td><%=vo.getEname() %></td>
-									<td><%=vo.getJob()%></td>
-									<td><%=vo.getHiredate_fmt()%></td>
-								</tr>
-								<%
-								}
-								%>
+								<c:forEach items="${userlist}" var="user">
+									<tr>
+										<td>${user.empno}</td>
+										<td>${user.ename}</td>
+										<td>${user.job}</td> 
+										<td><fmt:formatDate value="${user.hiredate }" type="date" dateStyle="medium" /></td>
+									</tr>
+								</c:forEach>
 							</table>
 						</div>
 

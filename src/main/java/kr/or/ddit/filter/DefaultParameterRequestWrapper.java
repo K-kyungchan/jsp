@@ -19,7 +19,7 @@ public class DefaultParameterRequestWrapper extends HttpServletRequestWrapper {
 		// 사정에 의해서 모든 요청객체에 UNT_CD 파라미터로 DDIT 문자열값을 넣어줘야 되는 상황
 		customMap.put("UNT_CD", new String[] { "DDIT" });
 	}
-	
+
 	@Override
 	public String getParameter(String name) {
 		// 키에 해당하는 값중에 첫번째 값을 반환
@@ -31,20 +31,20 @@ public class DefaultParameterRequestWrapper extends HttpServletRequestWrapper {
 			return values[0];
 		}
 	}
-	
+
 	@Override
 	public Map<String, String[]> getParameterMap() {
 		return customMap;
 	}
-	
+
 	@Override
 	public Enumeration<String> getParameterNames() {
 		return Collections.enumeration(customMap.keySet());
 	}
-	
+
 	@Override
 	public String[] getParameterValues(String name) {
 		return customMap.get(name);
 	}
-	
+
 }
