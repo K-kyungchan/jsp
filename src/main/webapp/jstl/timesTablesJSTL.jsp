@@ -34,7 +34,7 @@ table {
 	</table>
 	<br>
 	<br>
-	
+
 	<h3>향상된 for문</h3>
 	<%
 		List<String> rangers = new ArrayList<String>();
@@ -55,29 +55,10 @@ table {
 			</c:forEach>
 		*/
 	%>
-	
+
 	<c:forEach items="${rangers}" var="ranger">
 		${ranger }<br>
 	</c:forEach>
-	
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 </body>
 </html>

@@ -32,7 +32,6 @@
 		 %>
 		 
 	--%>
-
 	<%
 	if (((String) pageContext.getAttribute("userid")).equals("brown")) {
 		out.write("userid-스크립틀릿 : " + (String) pageContext.getAttribute("userid"));

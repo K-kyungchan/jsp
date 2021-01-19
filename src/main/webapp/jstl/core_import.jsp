@@ -11,7 +11,7 @@
 	<c:import url="https://search.naver.com/search.naver">
 		<c:param name="query" value="김경찬"></c:param>
 	</c:import>
- 
-	
+ 	
+ 	
 </body>
 </html>
